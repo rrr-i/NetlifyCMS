@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
+import styled from "styled-components";
 
 import Layout from '../components/Layout'
 import Features from '../components/Features'
@@ -72,7 +73,8 @@ export const IndexPageTemplate = ({
               <div className="content">
                 <div className="content">
                   <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
+                    {/* <h1 className="title">{mainpitch.title}</h1> */}
+                    <Message>{mainpitch.title}</Message>
                   </div>
                   <div className="tile">
                     <h3 className="subtitle">{mainpitch.description}</h3>
@@ -191,3 +193,7 @@ export const pageQuery = graphql`
     }
   }
 `
+const Message = styled.p`
+  font-size: 28px;
+  color: red;
+`;
